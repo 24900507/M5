@@ -49,7 +49,7 @@ unsigned long long product(int n) {
     if (n == 1) {
         return 1; // Base case
     } else {
-        return n * product(n - 1); // Recursive case
+        return n * product(n - 1);
     }
 }
 int main() {
