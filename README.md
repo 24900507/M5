@@ -142,32 +142,41 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 ## PROGRAM:
 ```
 #include <stdio.h>
+#include <string.h>
 int main() {
     char str[100];
-    int rows, i, j;
     scanf("%s", str);
-    scanf("%d", &rows);
-    for(i = 0; i < rows; i++) {
-        j = 0;
-        while(str[j] != '\0') {
-            printf("%c ", str[j]);
-            j++;
+    int len = strlen(str);
+    int sp = 10;
+    int k = 0;        
+    int y = 0;  
+    for (int i = 1; i <= len; i++) {
+        for (int space = 1; space <= sp; space++) {
+            printf(" ");
+        }
+        for (int j = 0; j <= y; j++) {
+            printf("%c", str[k]);
+            k++;
+            if (str[k] == '\0') 
+                k = 0;
         }
         printf("\n");
+        sp -= 1;  
+        y += 2;   
     }
     return 0;
+}
+
 }
 ```
 ## OUTPUt:
 ```
 PROGRAM
-5
-
-P R O G R A M
-P R O G R A M
-P R O G R A M
-P R O G R A M
-P R O G R A M
+          P
+         ROG
+        RAMPR
+       OGRAMPR
+      OGRAMPROG
 ```
 
 ## RESULT
@@ -219,6 +228,7 @@ int main() {
 }
 ```
 ## OUTPUT
+```
 Enter 6 integers:
 5
 10
@@ -228,6 +238,7 @@ Enter 6 integers:
 30
 The elements of the array are:
 5 10 15 20 25 30
+```
 
 ## RESULT
 Thus the C program to read and display an array of any 6 integer elements using pointer has been executed
